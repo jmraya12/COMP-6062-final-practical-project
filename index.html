@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Final Project</title>
+    <!-- Soure link for css -->
+    <link rel="stylesheet" href="css/styles.css">
+    <!-- Soure link for bootstrap -->
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+</head>
+<body class="jr_body">
+    <header>
+        <h1 class="jr_name">Jonel Raya - 1189021</h1>
+    </header>
+    <main>
+        <!-- Vue app container -->
+        <div class="jr_app" id="app">
+            <!-- Random User Profile Module -->
+            <div class="jr_column">
+                <h4>Name: {{name}}</h4>
+                <h4>Age: {{age}}</h4>
+                <h4>Profile:</h4>
+                <img class="jr_img" :src="imageUrl" alt="Avatar - Image Profile">
+                <button class="jr_btn1" @click="getUserData">Next User Profile</button>
+            </div>
+            <!-- Weather Module -->
+            <div class="jr_column">
+                <input class="jr_city" type="text" v-model="city" placeholder="Enter a city" required>
+                <input class="jr_province" type="text" v-model="province" placeholder="Enter a province" required>
+                <input class="jr_country" type="text" v-model="country" placeholder="Enter a country" required>
+                <button class="jr_btn2" @click="getWeatherData">Get Weather Data</button>
+                <p class="jr_temp">Temperature: {{temp}}&#176;C</p>
+                <p>Wind: {{wind}}</p>
+                <p>Description: {{condition}}</p>
+            </div>
+            <!-- Dictionary Module -->
+            <div class="jr_column">
+                <input class="jr_word" type="text" v-model="word" placeholder="Input a word">
+                <button class="jr_btn3" @click="defineWord">Define Word</button>
+                <p class="jr_phonetic">Phonetic: {{phonetic}}</p>
+                <p>Definition: {{definition}}</p>
+            </div>
+        </div>
+    </main>
+    <footer>
+        <p>&copy; 2026 COMP6062 Final Project. All rights reserved.</p>
+    </footer>
+    <!-- Source Link for Vue.js CDN -->
+    <script src="https://unpkg.com/vue@3.4.31/dist/vue.global.js"></script>
+    <!-- Source link for javaScript -->
+    <script src="scripts/app.js"></script>
+</body>
+</html>

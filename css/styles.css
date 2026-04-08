@@ -1,0 +1,138 @@
+
+
+h1 {
+    background-color: #101820;
+    color: #FEE715;
+    text-align: center;
+    font-family: Arial;
+    padding: 4px;
+}
+
+.jr_body {
+    background-color:aliceblue ;
+}
+
+.jr_app {
+    display:inline-block;
+}
+
+.jr_column {
+    padding: 12px;
+    margin: 8px;
+    box-sizing: border-box;
+    /* Glassmorphism */
+    background: rgba(255, 255, 255, 0.2); /* Semi-transparent white */
+    backdrop-filter: blur(10px);         /* Blurs the content behind */
+    -webkit-backdrop-filter: blur(10px); /* Required for Safari support */
+    border: 0.5px solid rgba(255, 255, 255, 0.3);
+    box-shadow: 0 4px 30px rgba(0, 0, 0, 0.1);
+}
+
+/* User Profile Section */
+
+.jr_name {
+    color: yellow;
+}
+
+.jr_img {
+    width: 200px;
+    height: 200px;
+}
+
+.jr_btn1 {
+    display: grid;
+    margin-top: 8px;
+    margin-left: 24px;
+    border-radius: 8px;
+    border: 1px solid; /* Thin bright border */
+    transition: all 0.3s ease;
+}
+
+.jr_btn1:hover {
+    background-color:cyan;
+}
+
+/* Weather Forecast Section */
+
+.jr_city {
+    margin: 2px;
+    text-align: center;
+    background-color: #DDF6D2;
+}
+
+.jr_province {
+    margin: 2px;
+    text-align: center;
+    background-color: #E4EFE7;
+}
+
+.jr_country {
+    margin: 2px;
+    text-align: center;
+    background-color: #D1F8EF;
+}
+
+.jr_temp {
+    padding-top: 16px;
+}
+
+.jr_btn2 {
+    margin-top: 4px;
+    margin-left: 4px;
+    border-radius: 8px;
+    border: 1px solid; /* Thin bright border */
+    transition: all 0.3s ease;
+    width: 190px;
+    
+}
+
+.jr_btn2:hover {
+    background-color:cyan;
+}
+
+/* Dictionary Section */
+
+.jr_word {
+    margin: 2px;
+    text-align: center;
+    background-color: lightskyblue;
+}
+
+.jr_btn3 {
+    margin-top: 4px;
+    margin-left: 4px;
+    border-radius: 8px;
+    border: 1px solid; /* Thin bright border */
+    transition: all 0.3s ease;
+    width: 190px;
+}
+
+.jr_btn3:hover {
+    background-color:cyan;
+}
+
+.jr_phonetic {
+    padding-top: 16px;
+}
+
+/* Media Query */
+@media (max-width: 650px) {
+
+    .jr_name {
+        background-color: #FEE715;
+        color: #101820;
+    }
+
+    .jr_body {
+    background-color: #101820 ;
+    }
+
+    .jr_column {
+        color:azure;
+    }
+
+    footer p {
+        color:azure;
+    }
+
+}
