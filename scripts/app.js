@@ -38,7 +38,6 @@ const weatherCode = {
     99: 'Thunderstorm with slight and heavy hail',
 }
 
-
 //Create a new Vue app
 const app = Vue.createApp({
     
@@ -82,12 +81,12 @@ const app = Vue.createApp({
                     }
                 })
                 .then(async userData => {
-                    console.log(userData.results);
                     let fname = await userData.results[randnum]['name']?.first;//Get first name
                     let lname = await userData.results[randnum]['name']?.last;//Get last name
                     this.name = fname + ' ' + lname;//Combine first and last name
                     this.age = await userData.results[randnum]['dob']['age'];//Get the age inside date of birth parameter
                     this.imageUrl = await userData.results[randnum]['picture']['large'];//Get large profile pic
+                    console.log(this.name, this.age, this.imageUrl);
                 })
                 .catch(error => {
                     console.log('Error: ', error);
@@ -115,7 +114,6 @@ const app = Vue.createApp({
                 }
             })
             .then(data => {
-                //console.log(data);
                 latitude = data[0].lat;
                 longitude = data[0].lon;
                 console.log(latitude);
@@ -133,7 +131,6 @@ const app = Vue.createApp({
                     }
                 })
                 .then(async data => {
-                    console.log(data);
                     //Get latest temp from the array
                     this.temp = await data.hourly.temperature_2m[data.hourly.temperature_2m.length - 1];
                     //Get latest wind speed from the array
@@ -141,7 +138,7 @@ const app = Vue.createApp({
                     //Get latest weather code from the array
                     let wc = await data.hourly.weather_code[data.hourly.temperature_2m.length - 1];
                     this.condition = weatherCode[wc];
-
+                    console.log(this.temp,'\xB0C', this.wind, this.condition);
                 })
                 .catch(error => {
                     console.error('Error:', error);
@@ -168,7 +165,6 @@ const app = Vue.createApp({
                 }
             })
             .then(async word => {
-                //console.log(word);
                 let phoneticTxt = null;
                 const phoneticArr = await word[0].phonetics;
                 phoneticArr.forEach(element => {
@@ -182,7 +178,7 @@ const app = Vue.createApp({
                 this.phonetic = phoneticTxt;
                 //Update and get the first definition of the word
                 this.definition =  await word[0].meanings[0].definitions[0]['definition'];
-
+                console.log(this.word, ':', this.definition, '|', this.phonetic);
             })
             .catch(error => {
                 console.error('Error:', error);
