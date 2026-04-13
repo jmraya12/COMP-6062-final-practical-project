@@ -132,11 +132,11 @@ const app = Vue.createApp({
                 })
                 .then(async data => {
                     //Get latest temp from the array
-                    this.temp = await data.hourly.temperature_2m[data.hourly.temperature_2m.length - 1];
+                    this.temp = await data.hourly.temperature_2m[1];
                     //Get latest wind speed from the array
-                    this.wind = await data.hourly.wind_speed_10m[data.hourly.temperature_2m.length - 1] + ' ' +  await data.hourly_units.wind_speed_10m;
+                    this.wind = await data.hourly.wind_speed_10m[1] + ' ' +  await data.hourly_units.wind_speed_10m;
                     //Get latest weather code from the array
-                    let wc = await data.hourly.weather_code[data.hourly.temperature_2m.length - 1];
+                    let wc = await data.hourly.weather_code[1];
                     this.condition = weatherCode[wc];
                     console.log(this.temp,'\xB0C', this.wind, this.condition);
                 })
